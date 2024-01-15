@@ -1,0 +1,214 @@
+:root {
+    --red: #E2001A;
+    --black: #3A3636;
+    --grey1: #58585A;
+    --grey2: #6F7073;
+    --grey3: #0000003f;
+    --grey4: #F1F5F5;
+    --grey5: #E3E4E4;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    color: #58585a;
+    font-family: "Roboto", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior: none;
+    box-sizing: content-box !important;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 3.8rem;
+    color: #3a3636;
+    font-weight: bold;
+    font-family: TTRoundsCondensed, Open Sans, sans-serif;
+    margin-bottom: 45px;
+}
+
+.row{
+    gap:24px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 0 25px 25px 25px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.elevation {
+    background: #fff;
+    border-radius: 10px;
+}
+
+.thermometre{
+    border: 1px solid #d2d6d6;
+}
+
+.active-line .stops {
+    overflow: auto;
+    padding: 10px;
+    font-size: .875em;
+}
+
+.active-line .stops .stop {
+    cursor: pointer;
+    display: flex;
+}
+
+.active-line .stops .stop:not(:first-child) .border {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-top: 0;
+    box-sizing: content-box;
+}
+
+.active-line .stops .stop .first-border {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-top: 9px !important;
+    box-sizing: content-box;
+}
+
+.active-line .stops .stop:last-child .border {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 17px;
+}
+
+.active-line .stops .stop .border {
+    border-left: 4px solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-left: 25px;
+    margin-top: 9px;
+    box-sizing: content-box;
+}
+
+.active-line .stops .stop .stop-terminus {
+    height: 12px;
+    margin: 5px 32px 0 -10px;
+    width: 12px;
+}
+
+.active-line .stops .stop .point {
+    background: #fff;
+    border-radius: 50%;
+    height: 6px;
+    margin: 8px 35px 0 -7px;
+    width: 6px;
+}
+
+.active-line .stops .stop .stop-name {
+    flex: 1 1;
+    padding: 5px 0 8px;
+}
+
+.active-line .stops .stop .stop-name .stop-and-tools {
+    display: flex;
+    align-items: center;
+}
+
+.active-line .stops .stop .stop-terminus {
+    height: 12px;
+    margin: 5px 32px 0 -10px;
+    width: 12px;
+}
+
+.line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 7px;
+    border: 2px solid rgba(0, 0, 0, .08);
+    border-radius: 5px;
+}
+
+.line img {
+    height: 20px;
+    max-width: 65px;
+}
+
+.line-header-card {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-shrink: 0;
+    position: relative;
+    flex: auto;
+}
+
+.line-header-card .direction {
+    flex: 1 1;
+    margin-left: 10px;
+    font-size: 1.8rem;
+    color: #3a3636;
+    font-weight: 900;
+    line-height: 1.33;
+    letter-spacing: 0.4px;
+}
+
+.line-header-card .tools {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.tool-favorite, .tool-route-calculation, .tool-timetable {
+    cursor: pointer;
+    height: 25px;
+    margin: 3px;
+    width: 25px;
+}
+
+.line-header-card .direction {
+    flex: 1 1;
+}
+
+/* Section Feuilel de route*/
+.roadmap .section-part-bottom, .roadmap .section-part-content, .roadmap .section-part-top {
+    display: grid;
+    cursor: pointer;
+    grid-template-columns: 60px 1fr;
+    height: 40px;
+}
+
+.roadmap .section-part-bottom .section-part-border, .roadmap .section-part-content .section-part-border, .roadmap .section-part-top .section-part-border {
+    position: relative;
+}
+
+.roadmap .section-part-bottom .section-part-border .section-part-bull, .roadmap .section-part-content .section-part-border .section-part-bull, .roadmap .section-part-top .section-part-border .section-part-bull {
+    background: #fff;
+    border: 3px solid #333;
+    border-radius: 50%;
+    height: 10px;
+    left: 22px;
+    position: absolute;
+    top: 0px;
+    width: 10px;
+}
+
+.section-part-border {
+    border-width: 0px;
+    background-image: linear-gradient(rgb(51, 51, 51) 50%, rgba(255, 255, 255, 0) 0%);
+    background-position: center center;
+    background-size: 2px 5px;
+    background-repeat: repeat-y;
+}
+
+.section-part-bottom .section-part-border {
+    background: 0
+}
+
+.tool-swap {
+    background: url(https://www.tcl.fr/themes/custom/sytral_theme/img/ico/swap.svg) no-repeat 50%;
+}

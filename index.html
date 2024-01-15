@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermometre de lignes</title>
+    <link rel="stylesheet" href="css/sytral/css_cvGyGSr_k7nuBAvRpjDoAs9hYxhxhAGRuhpgNWUyOas.css">
+    <link rel="stylesheet" href="css/sytral/css_udGRvre-yf4-h3WAyT22u-fc8kCf6knF4blLSNbLUwI.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/info-trafic.css">
+</head>
+
+<body>
+    <div class="line-header_container container container--editorial">
+
+        <h1 class="line-header">
+            <img class="line-header_image" src="/themes/custom/sytral_theme/img/lignes/B.svg" title="Métro B"
+                alt="Métro B">
+            <span> Charpennes - Gare d'Oullins </span>
+        </h1>
+    </div>
+    <div class="container container--editorial">
+        <div class="row">
+            <section class="large">
+                <section class="board large">
+                    <div class="content no-scroll">
+                        <div class="board-header">
+                            <div class="line-header-direction">
+                                <span class="direction direction-top"><br>
+                                    <strong id="titre_line"></strong>
+                                    <div class="triangle"></div>
+                                </span>
+                                <span class="direction direction-bottom">Lorem ipsum dolor sit amet<br>
+                                    <strong id="titre_line"></strong>
+                                </span>
+                                <div class="tools tools-change">
+                                    <span class="tool-swap" role="button" tabindex="0"
+                                        title="Changer la direction de la ligne" onclick="swap()"></span>
+                                    <!-- <span class="tool-timetable" role="button" tabindex="0"
+                                        aria-label="Téléchargez la fiche horaire"></span> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="elevation thermometre">
+                            <!-- ROADMAP -->
+                            <div class="roadmap scroll" style="margin-top: 20px;"></div>
+                        </div>
+                </section>
+            </section>
+
+            <!-- info Trafic -->
+            <section class="large info-trafic">
+                <h2 class="heading" style="padding-left:20px">Info Trafic</h2>
+                <section class="board" style="border-left: 3px solid red;">
+                    <div class="content no-scroll">
+                        <div class="board-header"
+                            style="color: red;font-weight: 800;height: auto;  background:white;">
+                            <div class="line-header-card">
+                                <div class="truc">Perturbation majeure
+                                    <span
+                                        style="display: inline-block;width: 100%;color: #3a3636;margin-top: 10px;">Terminus
+                                        exceptionnel Saxe-Lafayette - 15/10
+                                    </span>
+                                </div>
+                                <div class="tools">
+                                    <span class="tool-timetable" role="button" tabindex="0"
+                                        aria-label="Téléchargez la fiche horaire">
+                                    </span>
+                                    <span class="tool-swap" role="button" tabindex="0"
+                                        title="Changer la direction de la ligne" onclick="open_disruption('number')"
+                                        style="background: url(https://preprod.tcl.fr/themes/custom/sytral_theme/img/ico/caret-bold.svg);transform: rotate(-90deg);">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="elevation hidden" data-iv="number" style="margin-top: 20px">
+                            <p>À la suite d'une absence de personnel, les départs suivants ne sont pas assurés :</p>
+                            <br>
+                            <ul>
+                                <li>&nbsp;de Campus Lyon Ouest vers Gare de Vaise 07h49 08h25 08h32 16h28 16h47 16h57
+                                    17h16
+                                    17h36 17h45 18h04 18h23 18h33 18h51 </li>
+                                <li> de Campus Lyon Ouest vers Gare Part-Dieu V.Merle 07h26 09h05 10h35 12h05 13h35
+                                    15h05
+                                    16h36 18h12 </li>
+                                <li> de Gare de Vaise vers Campus Lyon Ouest 07h25 08h04 08h11 08h48 08h56 16h05 16h23
+                                    16h33
+                                    16h53 17h13 17h22 17h41 18h00 18h10 18h28</li>
+                                <li> de Gare Part-Dieu V.Merle vers Campus Lyon Ouest 08h16 09h50 11h20 12h50 14h20
+                                    15h50
+                                    17h26 &nbsp; &nbsp; &nbsp; &nbsp;</li>
+                            </ul>
+                            <br>
+                            <p class="alert_period">
+                                <b>Du 16/10/2023 à 05:00 au 16/10/2023 à 23:59</b>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

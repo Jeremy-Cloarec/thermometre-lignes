@@ -8,6 +8,7 @@
     --grey5: #E3E4E4;
 }
 
+
 * {
     box-sizing: border-box;
 }
@@ -190,11 +191,11 @@ h2 {
     background: #fff;
     border: 3px solid #333;
     border-radius: 50%;
-    height: 10px;
+    height: 16px;
     left: 22px;
     position: absolute;
     top: 0px;
-    width: 10px;
+    width: 16px;
 }
 
 .section-part-border {
@@ -211,4 +212,5 @@ h2 {
 
 .tool-swap {
     background: url(https://www.tcl.fr/themes/custom/sytral_theme/img/ico/swap.svg) no-repeat 50%;
+
 }

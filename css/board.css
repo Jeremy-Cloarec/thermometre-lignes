@@ -25,11 +25,15 @@
     width: 100%;
 }
 
+#swapDirection {
+    cursor: pointer;
+}
+
 .tools-change {
     background-color: white;
     padding: 6px;
     border-radius: 50%;
-    border: solid 1px var(--black);
+    border: solid 2px var(--black);
     position: absolute;
     top: 50%;
     right: 10px;
@@ -68,9 +72,6 @@
 .direction-top {
     background-color: var(--grey5);
     position: relative;
-    border-top: 1px solid #d2d6d6;
-    border-left: 1px solid #d2d6d6;
-    border-right: 1px solid #d2d6d6;
 }
 
 .direction-bottom {

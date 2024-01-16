@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/board.css">
     <link rel="stylesheet" href="css/info-trafic.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
 <body>
@@ -29,15 +31,19 @@
                         <div class="board-header">
                             <div class="line-header-direction">
                                 <span class="direction direction-top"><br>
-                                    <strong id="titre_line"></strong>
+                                    <strong id="titre_line_1"></strong>
                                     <div class="triangle"></div>
                                 </span>
-                                <span class="direction direction-bottom">Lorem ipsum dolor sit amet<br>
-                                    <strong id="titre_line"></strong>
+                                <span class="direction direction-bottom"><br>
+                                    <strong id="titre_line_2"></strong>
                                 </span>
                                 <div class="tools tools-change">
-                                    <span class="tool-swap" role="button" tabindex="0"
-                                        title="Changer la direction de la ligne" onclick="swap()"></span>
+                                    <!-- <span class="tool-swap" role="button" tabindex="0"
+                                        title="Changer la direction de la ligne" onclick="swap()"></span> -->
+                                    <span class="material-symbols-outlined" id="swapDirection" role="button" tabindex="0"
+                                    title="Changer la direction de la ligne" onclick="swap()">
+                                        swap_vert
+                                    </span>
                                     <!-- <span class="tool-timetable" role="button" tabindex="0"
                                         aria-label="Téléchargez la fiche horaire"></span> -->
                                 </div>
@@ -55,8 +61,7 @@
                 <h2 class="heading" style="padding-left:20px">Info Trafic</h2>
                 <section class="board" style="border-left: 3px solid red;">
                     <div class="content no-scroll">
-                        <div class="board-header"
-                            style="color: red;font-weight: 800;height: auto;  background:white;">
+                        <div class="board-header" style="color: red;font-weight: 800;height: auto;  background:white;">
                             <div class="line-header-card">
                                 <div class="truc">Perturbation majeure
                                     <span

@@ -30,7 +30,7 @@ function swap() {
 
 export async function fetchin() {
     try {
-        let line = "T7";
+        let line = "B";
 
         const response = await fetch(`https://testazure2.tcl.fr/route/${line}`);
         if (!response.ok) {
@@ -47,6 +47,9 @@ export async function fetchin() {
 function processRouteData(data) {
     const roadmap = document.querySelector('.roadmap');
     roadmap.innerHTML = '';
+
+    const nameLine = document.querySelector('#name-line');
+    nameLine.innerHTML = data.route[0].name
 
     data.route[sens].stop_point.forEach((stop, index) => {
         let section;

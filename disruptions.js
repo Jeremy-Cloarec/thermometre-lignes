@@ -21,5 +21,7 @@ function  processDisruptionData(data) {
         console.log(disruption.application_periods[0].begin);
         console.log(disruption.application_periods[0].end);
     }
+
+    
 }
 

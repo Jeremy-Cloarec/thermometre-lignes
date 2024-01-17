@@ -12,7 +12,37 @@
     display: flex;
 }
 
-.arrow-open-disruption .tools {
+.arrow-open-disruption {
     flex: content;
+}
 
+.global-container-disruption{
+    gap: 12px;
+    padding:12px;
+    border: 1px solid grey;
+}
+
+.container-disruption{
+    padding :12px;
+    border: 1px solid grey;
+}
+
+.sub-container-disruption{
+    padding: 12px;
+    background-color: rgb(225, 225, 225);
+}
+
+#open-disruption{
+    background: url(https://preprod.tcl.fr/themes/custom/sytral_theme/img/ico/caret-bold.svg);transform: rotate(-90deg);
+}
+
+.sub-container-disruption{
+    display: flex;
+    align-items: center;
+}
+.disruption-header{
+    flex:1;
+}
+.arrow-open-disruption{
+    flex: initial;
 }

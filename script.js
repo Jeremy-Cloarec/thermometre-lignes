@@ -4,20 +4,14 @@ const urlParams = new URLSearchParams(queryString);
 const ligne = urlParams.get('ligne')
 
 const swapButton = document.querySelector('#swapDirection')
-const openDisruption = document.querySelector('#open-disruption')
+
 
 fetchin();
 
 swapButton.addEventListener("click", function(){
     swap();
 })
-openDisruption.addEventListener("click", function(e){
-    open_disruption('number')
-})
 
-function open_disruption(el) {
-    document.querySelector('[data-iv="' + el + '"]').classList.toggle('hidden');
-}
 
 function swap() {
     if (sens == 0) {

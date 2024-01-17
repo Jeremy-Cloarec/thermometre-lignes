@@ -30,7 +30,7 @@ function swap() {
 
 export async function fetchin() {
     try {
-        let line = "T7";
+        let line = "C3";
 
         const response = await fetch(`https://testazure2.tcl.fr/route/${line}`);
         if (!response.ok) {
@@ -161,8 +161,7 @@ function processRouteData(data) {
 
             //Création de la ligne verticale qui sépare chaque arrêt
             if (data.impacted_objects.includes(stop.stop_area)) {
-                el = document.getElementsByClassName('section-part-border');
-                console.log(el[el.length - 1])
+                let el = document.getElementsByClassName('section-part-border');
                 el[el.length - 1].style.backgroundImage = 'linear-gradient(rgb(51, 51, 51) 50%, rgba(255, 255, 255, 0) 0%)';
             }
             section = document.createElement('div');

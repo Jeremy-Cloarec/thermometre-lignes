@@ -19,6 +19,8 @@ function processDisruptionData(data) {
     //Boucle qui parcourt toutes les disruptions. 
     //Elle génère des dives et place les inf otrafics à l'intérieur
     for (const disruption of disruptions) {
+        
+
         console.log(disruption.messages.text);
         console.log(disruption.messages.title);
         console.log(disruption.severity.priority);

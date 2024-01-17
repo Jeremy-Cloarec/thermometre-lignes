@@ -3,7 +3,19 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const ligne = urlParams.get('ligne')
 
+let swapButton = document.querySelector('#swapDirection')
+let openDisruption = document.querySelector('#open-disruption')
+
 fetchin();
+
+swapButton.addEventListener("click", function(){
+    swap();
+})
+openDisruption.addEventListener("click", function(e){
+    open_disruption('number')
+})
+
+
 
 function open_disruption(el) {
     document.querySelector('[data-iv="' + el + '"]').classList.toggle('hidden');
@@ -18,13 +30,19 @@ function swap() {
     fetchin()
 }
 
-function fetchin() {
-    fetch('https://testazure2.tcl.fr/route/B')
-        .then(response => response.json())
-        .then(data => processRouteData(data))
-        .catch(error => console.error('Erreur lors de la récupération des données:', error));
+export async function fetchin() {
+    try {
+        const response = await fetch('https://testazure2.tcl.fr/route/B');
+        if (!response.ok) {
+            throw new Error('Réponse réseau non OK');
+        }
+        const data = await response.json()
+        processRouteData(data)
+        return data
+    } catch (error) {
+        console.error('Erreur lors de la récupération des données:', error);
+    }
 }
-
 
 function processRouteData(data) {
     const roadmap = document.querySelector('.roadmap');
@@ -38,19 +56,19 @@ function processRouteData(data) {
             //On insère l'arrêt de départ dans direction-top
             const header1 = document.querySelector('#titre_line_1');
             header1.innerHTML = stop.name;
-            header1.style.color="white"
+            header1.style.color = "white"
 
             const triangle = document.querySelector('.triangle');
-            triangle.style.borderTop=`#${data.route[sens].color} solid 14px`;
+            triangle.style.borderTop = `#${data.route[sens].color} solid 14px`;
 
             const directionTop = document.querySelector('.direction-top')
-            directionTop.style.backgroundColor ='#' + data.route[sens].color;
+            directionTop.style.backgroundColor = '#' + data.route[sens].color;
 
             const swapDirection = document.querySelector('#swapDirection');
             swapDirection.style.color = '#' + data.route[sens].color;
 
             const toolsChange = document.querySelector('.tools-change');
-            toolsChange.style.border =`#${data.route[sens].color} solid 2px`;
+            toolsChange.style.border = `#${data.route[sens].color} solid 2px`;
 
             section = document.createElement('div');
             section.className = 'section-part-top ' + stop.stop_area;
@@ -71,7 +89,7 @@ function processRouteData(data) {
                 icon.className = 'perturbation';
                 border.appendChild(icon);
 
-            //Sinon on crée la bulle du point de départ
+                //Sinon on crée la bulle du point de départ
             } else {
                 const bull = document.createElement('div');
                 bull.className = 'section-part-bull';
@@ -92,8 +110,8 @@ function processRouteData(data) {
             section.appendChild(label);
             roadmap.appendChild(section);
 
-        //Puis le dernier
-        //On insère le dernier arrête de la ligne dans directionBottom (destination)
+            //Puis le dernier
+            //On insère le dernier arrête de la ligne dans directionBottom (destination)
         } else if (index === data.route[sens].stop_point.length - 1) {
 
             const header2 = document.querySelector('#titre_line_2');
@@ -117,7 +135,7 @@ function processRouteData(data) {
                 icon.alt = 'Perturbation Majeure';
                 icon.className = 'perturbation';
                 border.appendChild(icon);
-            //Sinon on met le rond de départ
+                //Sinon on met le rond de départ
             } else {
                 const bull = document.createElement('div');
                 bull.className = 'section-part-bull';
@@ -135,7 +153,7 @@ function processRouteData(data) {
             section.appendChild(label);
 
             roadmap.appendChild(section);
-        //Tous les autres points d'arrêtc
+            //Tous les autres points d'arrêtc
         } else {
 
             //Création de la ligne verticale qui sépare chaque arrêt
@@ -162,7 +180,7 @@ function processRouteData(data) {
                 icon.alt = 'Perturbation Majeure';
                 icon.className = 'perturbation';
                 border.appendChild(icon);
-            //Sinon les bulles
+                //Sinon les bulles
             } else {
                 const bull = document.createElement('div');
                 bull.className = 'section-part-bull';
@@ -178,3 +196,4 @@ function processRouteData(data) {
         }
     });
 }
+

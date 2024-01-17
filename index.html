@@ -41,7 +41,7 @@
                                     <!-- <span class="tool-swap" role="button" tabindex="0"
                                         title="Changer la direction de la ligne" onclick="swap()"></span> -->
                                     <span class="material-symbols-outlined" id="swapDirection" role="button" tabindex="0"
-                                    title="Changer la direction de la ligne" onclick="swap()">
+                                    title="Changer la direction de la ligne">
                                         swap_vert
                                     </span>
                                     <!-- <span class="tool-timetable" role="button" tabindex="0"
@@ -73,8 +73,8 @@
                                     <span class="tool-timetable" role="button" tabindex="0"
                                         aria-label="Téléchargez la fiche horaire">
                                     </span>
-                                    <span class="tool-swap" role="button" tabindex="0"
-                                        title="Changer la direction de la ligne" onclick="open_disruption('number')"
+                                    <span id="open-disruption" class="tool-swap" role="button" tabindex="0"
+                                        title="Changer la direction de la ligne" 
                                         style="background: url(https://preprod.tcl.fr/themes/custom/sytral_theme/img/ico/caret-bold.svg);transform: rotate(-90deg);">
                                     </span>
                                 </div>
@@ -107,7 +107,8 @@
             </section>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script type="module" src="./script.js"></script>
+    <script type="module" src="./disruptions.js"></script>
 </body>
 
 </html>

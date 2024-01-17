@@ -3,8 +3,8 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const ligne = urlParams.get('ligne')
 
-let swapButton = document.querySelector('#swapDirection')
-let openDisruption = document.querySelector('#open-disruption')
+const swapButton = document.querySelector('#swapDirection')
+const openDisruption = document.querySelector('#open-disruption')
 
 fetchin();
 
@@ -14,8 +14,6 @@ swapButton.addEventListener("click", function(){
 openDisruption.addEventListener("click", function(e){
     open_disruption('number')
 })
-
-
 
 function open_disruption(el) {
     document.querySelector('[data-iv="' + el + '"]').classList.toggle('hidden');
@@ -32,7 +30,9 @@ function swap() {
 
 export async function fetchin() {
     try {
-        const response = await fetch('https://testazure2.tcl.fr/route/B');
+        let line = "T7";
+
+        const response = await fetch(`https://testazure2.tcl.fr/route/${line}`);
         if (!response.ok) {
             throw new Error('Réponse réseau non OK');
         }

@@ -30,7 +30,7 @@ function swap() {
 
 export async function fetchin() {
     try {
-        let line = "B";
+        let line = "T7";
 
         const response = await fetch(`https://testazure2.tcl.fr/route/${line}`);
         if (!response.ok) {

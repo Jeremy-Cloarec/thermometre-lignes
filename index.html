@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/board.css">
     <link rel="stylesheet" href="css/info-trafic.css">
+    <link rel="stylesheet" href="css/disruptions.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
@@ -40,8 +41,8 @@
                                 <div class="tools tools-change">
                                     <!-- <span class="tool-swap" role="button" tabindex="0"
                                         title="Changer la direction de la ligne" onclick="swap()"></span> -->
-                                    <span class="material-symbols-outlined" id="swapDirection" role="button" tabindex="0"
-                                    title="Changer la direction de la ligne">
+                                    <span class="material-symbols-outlined" id="swapDirection" role="button"
+                                        tabindex="0" title="Changer la direction de la ligne">
                                         swap_vert
                                     </span>
                                     <!-- <span class="tool-timetable" role="button" tabindex="0"
@@ -60,21 +61,15 @@
             <section class="large info-trafic">
                 <h2 class="heading" style="padding-left:20px">Info Trafic</h2>
                 <section class="board" style="border-left: 3px solid red;">
-                    <div class="content no-scroll">
-                        <div class="board-header" style="color: red;font-weight: 800;height: auto;  background:white;">
-                            <div class="line-header-card">
-                                <div class="truc">Perturbation majeure
-                                    <span
-                                        style="display: inline-block;width: 100%;color: #3a3636;margin-top: 10px;">Terminus
-                                        exceptionnel Saxe-Lafayette - 15/10
-                                    </span>
-                                </div>
+                    <div id="container-disruption" class="content no-scroll">
+                        <div id="sub-container-disruption">
+
+                            <!-- On insère ici le type de perturbation et son titre -->
+                            
+                            <div class="arrow-open-disruption">
                                 <div class="tools">
-                                    <span class="tool-timetable" role="button" tabindex="0"
-                                        aria-label="Téléchargez la fiche horaire">
-                                    </span>
                                     <span id="open-disruption" class="tool-swap" role="button" tabindex="0"
-                                        title="Changer la direction de la ligne" 
+                                        title="Changer la direction de la ligne"
                                         style="background: url(https://preprod.tcl.fr/themes/custom/sytral_theme/img/ico/caret-bold.svg);transform: rotate(-90deg);">
                                     </span>
                                 </div>

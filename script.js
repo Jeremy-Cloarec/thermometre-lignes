@@ -24,8 +24,7 @@ function swap() {
 
 export async function fetchin() {
     try {
-        let line = "C3";
-
+        let line = "C11";
         const response = await fetch(`https://testazure2.tcl.fr/route/${line}`);
         if (!response.ok) {
             throw new Error('Réponse réseau non OK');
